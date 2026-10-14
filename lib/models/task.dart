@@ -24,7 +24,7 @@ class Task {
 
   Map<String, Object?> toJson() {
     // TODO 1a: kembalikan Map untuk id, title, course, dan isDone.
-    return <String, Object?>{
+    return <String, Object?>{ 
       'id': id,
       'title': title,
       'course': course,

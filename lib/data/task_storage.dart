@@ -26,19 +26,19 @@ class TaskStorage {
     // List<Task> dengan Task.fromJson. JSON rusak dapat menghasilkan
     // FormatException agar UI menampilkan state error.
     final prefs = await SharedPreferences.getInstance();
-    final String? tasksJson = prefs.getString(_key); 
+    final String? tasksJson = prefs.getString(_key);
     if (tasksJson == null || tasksJson.isEmpty) {
-      return <Task>[];
+      return <Task>[]; 
     }
-
     final List<dynamic> decodedList = jsonDecode(tasksJson) as List<dynamic>;
     final loadedTasks =
         decodedList
-            .map((item) => Task.fromJson(item as Map<String, dynamic>))
-            .toList();
+            .map((item) => Task.fromJson(item as Map<String, dynamic>)) 
+            .toList(); 
+                      
 
-    _memory.clear();
-    _memory.addAll(loadedTasks);
+    _memory.clear(); 
+    _memory.addAll(loadedTasks); 
 
     return loadedTasks;
   }
